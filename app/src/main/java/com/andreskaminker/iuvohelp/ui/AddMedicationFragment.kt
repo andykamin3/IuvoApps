@@ -20,6 +20,7 @@ import com.andreskaminker.iuvoshared.entities.Patient
 import com.andreskaminker.iuvoshared.entities.TimeResult
 import com.andreskaminker.iuvohelp.room.viewmodel.MedicationViewModel
 import com.andreskaminker.iuvohelp.ui.dialogs.TimePickerFragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -34,6 +35,7 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
     private lateinit var nameEditText: EditText
     private lateinit var descriptionEditText: EditText
     private lateinit var imageButton: Button
+    private lateinit var fabMedication : FloatingActionButton
     private val medicationViewModel: MedicationViewModel by activityViewModels()
     private val currentPatient = Patient(
         "123",
@@ -52,14 +54,13 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
         nameEditText = v.findViewById(R.id.editTextMedicationName)
         descriptionEditText = v.findViewById(R.id.editTextMedicationDescription)
         imageButton = v.findViewById(R.id.imageButton)
+        fabMedication = v.findViewById(R.id.fabAddMedication)
         return v
     }
 
     private fun updateUI() {
         val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_check_24_b)
-        mActivity.setFabColor(R.color.colorAccent)
-        mActivity.setFabClickListener {
+       fabMedication.setOnClickListener{
             addMedication()
         }
     }
@@ -100,7 +101,7 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
                     takeTime = timeResult
                 )
             medicationViewModel.addMedication(medicationRequest)
-            (requireActivity() as MainActivity).setFabColor(R.color.colorAccent)
+
             val directions =
                 AddMedicationFragmentDirections.actionAddMedicationFragmentToHomeTabbedScreen()
             v.findNavController().navigate(directions)

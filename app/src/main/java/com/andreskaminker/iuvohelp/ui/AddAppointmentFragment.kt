@@ -24,6 +24,7 @@ import com.andreskaminker.iuvohelp.helpers.DummyData
 import com.andreskaminker.iuvohelp.room.viewmodel.AppointmentViewModel
 import com.andreskaminker.iuvohelp.ui.dialogs.DatePickerFragment
 import com.andreskaminker.iuvohelp.ui.dialogs.TimePickerFragment
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -45,6 +46,7 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
     private lateinit var patient: Patient
     private var timeSetted = false
     private var dateSetted = false
+    private lateinit var fabAppointment : FloatingActionButton
     private val appointmentViewModel: AppointmentViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,18 +57,14 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
         dateButton = v.findViewById(R.id.dateButton)
         nameEditText = v.findViewById(R.id.editTextMedicationName)
         descriptionEditText = v.findViewById(R.id.editTextMedicationDescription)
-
+        fabAppointment = v.findViewById(R.id.fabAddAppointment)
         return v
     }
 
     private fun updateUI() {
         val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_check_24_b)
-        mActivity.setFabColor(R.color.colorGreen)
-        mActivity.setFabClickListener {
-            (requireActivity() as MainActivity).setFabClickListener {
-                addAppointment(DummyData.currentPatient)
-            }
+        fabAppointment.setOnClickListener() {
+            addAppointment(DummyData.currentPatient)
         }
     }
 
@@ -122,7 +120,7 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
                     dateResult
                 )
             appointmentViewModel.addAppointment(mAppointment)
-            (requireActivity() as MainActivity).setFabColor(R.color.colorAccent)
+
             val directions =
                 AddAppointmentFragmentDirections.actionAddAppointmentFragmentToHomeTabbedScreen()
             v.findNavController().navigate(directions)

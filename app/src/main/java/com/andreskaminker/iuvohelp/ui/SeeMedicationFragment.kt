@@ -35,7 +35,7 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_see_medication, container, false)
         recyclerView = v.findViewById(R.id.recyclerMedications)
-        fabButton = requireActivity().findViewById(R.id.floatingActionButton)
+        fabButton = v.findViewById(R.id.fabSeeMedication)
         return v
     }
 
@@ -57,6 +57,7 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
             adapter = medicationAdapter
             layoutManager = LinearLayoutManager(context)
         }
+        updateUI()
         medicationViewModel.allMedications.observe(
             viewLifecycleOwner,
             Observer { medicationsList ->
@@ -66,18 +67,12 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
             })
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
 
-        updateUI()
-    }
 
 
     private fun updateUI() {
-        val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_add_24_b)
         //mActivity.setFabColor(R.color.colorAccent)
-        mActivity.setFabClickListener {
+        fabButton.setOnClickListener {
             val directions =
                 HomeTabbedScreenDirections.actionHomeTabbedScreenToAddMedicationFragment()
             v.findNavController().navigate(directions)
@@ -91,7 +86,7 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
         )
     }
 
-    fun onDeleteConfirmed(medicationRequest: MedicationRequest) {
+    private fun onDeleteConfirmed(medicationRequest: MedicationRequest) {
         medicationViewModel.deleteMedication(medicationRequest)
     }
 

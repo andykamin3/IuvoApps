@@ -33,7 +33,6 @@ class SeeAppointmentFragment : Fragment(), AppointmentFragmentFunctions {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentSeeAppointmentBinding.inflate(inflater, container, false)
-        fabButton = requireActivity().findViewById(R.id.floatingActionButton)
         return binding.root
     }
 
@@ -53,7 +52,7 @@ class SeeAppointmentFragment : Fragment(), AppointmentFragmentFunctions {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        updateUI()
+
     }
 
     companion object {
@@ -66,10 +65,10 @@ class SeeAppointmentFragment : Fragment(), AppointmentFragmentFunctions {
     }
 
     private fun updateUI() {
-        val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_add_24_b)
+
+
         //mActivity.setFabColor(R.color.colorAccent)
-        mActivity.setFabClickListener {
+        binding.fabSeeAppointment.setOnClickListener {
             val directions =
                 HomeTabbedScreenDirections.actionHomeTabbedScreenToAddAppointmentFragment()
             binding.root.findNavController().navigate(directions)

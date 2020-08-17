@@ -32,17 +32,10 @@ class ProfileFragment : Fragment() {
     }
 
     private fun updateUI() {
-        val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_home_24_b)
-        mActivity.setFabColor(R.color.colorAccent)
-        mActivity.setFabClickListener {
-            val directions = ProfileFragmentDirections.actionProfileFragmentToHomeTabbedScreen()
-            v.findNavController().navigate(directions)
-        }
+
     }
 
     override fun onStart() {
-        //updateUI()
         auth = FirebaseAuth.getInstance()
         buttonLogOut.setOnClickListener {
             auth.signOut()
