@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeTabbedScreen"
+        android:icon="@drawable/ic_baseline_home_24_b"
+        android:title="@string/inicio" />
+    <item
+        android:id="@+id/calendarFragment"
+        android:icon="@drawable/ic_baseline_calendar_today_24_b"
+        android:title="@string/calendario" />
+    <group>
+        <item
+            android:id="@+id/addAppointmentFragment"
+            android:icon="@drawable/ic_baseline_post_add_24_b"
+            android:title="@string/agregar_cita_m_dica" />
+        <item
+            android:id="@+id/addMedicationFragment"
+            android:icon="@drawable/ic_pill_add_b"
+            android:title="@string/agregar_medicaci_n" />
+    </group>
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_baseline_person_24_b"
+        android:title="@string/perfil" />
+</menu>

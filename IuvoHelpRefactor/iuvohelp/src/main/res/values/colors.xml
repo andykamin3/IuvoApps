@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorBackgroundCalendarEvent">#1973E8</color>
+    <color name="colorCalendarSelected">#D2E3FC</color>
+    <color name="colorWhite">#FFF</color>
+    <color name="colorGrey">#D0E0F0</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorYellow">#FFFF00</color>
+    <color name="colorGreen">#4CAF50</color>
+    <color name="materialDanger">#800020</color>
+</resources>

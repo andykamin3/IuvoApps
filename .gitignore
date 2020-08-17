@@ -1,0 +1,8 @@
+# Project exclude paths
+/.gradle/
+/app/build/
+/app/build/intermediates/javac/debug/classes/
+/IuvoHelpRefactor/iuvohelp/build/
+/IuvoHelpRefactor/iuvohelp/build/intermediates/javac/debug/classes/
+/IuvoShared/build/
+/IuvoShared/build/intermediates/javac/debug/classes/

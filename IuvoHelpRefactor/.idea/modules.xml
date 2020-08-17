@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IuvoCare.iml" filepath="$PROJECT_DIR$/.idea/modules/IuvoCare.iml" group="IuvoCare" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/iuvohelp.iml" filepath="$PROJECT_DIR$/.idea/modules/app/iuvohelp.iml" group="IuvoCare/iuvohelp" />
+    </modules>
+  </component>
+</project>
