@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.andreskaminker.iuvohelp">
+    package="com.andreskaminker.iuvocare">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <application
@@ -9,15 +9,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/iuvo_launcher_round"
         android:supportsRtl="true"
-        android:name="com.andreskaminker.iuvohelp.IuvoCareApplication"
+        android:name="com.andreskaminker.iuvocare.IuvoCareApplication"
         android:theme="@style/AppTheme">
-        <activity android:name="com.andreskaminker.iuvohelp.StartActivity">
+        <activity android:name="com.andreskaminker.iuvocare.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.andreskaminker.iuvohelp.MainActivity">
+        <activity android:name="com.andreskaminker.iuvocare.MainActivity">
 
         </activity>
     </application>

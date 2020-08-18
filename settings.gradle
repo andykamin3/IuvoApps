@@ -1,5 +1,5 @@
-include ':iuvohelp'
+include ':IuvoHelp'
 include ':IuvoShared'
 include ':app'
-project(':iuvohelp').projectDir = new File(rootDir, 'IuvoHelpRefactor/iuvohelp/')
+project(':IuvoHelp').projectDir = new File(rootDir, 'IuvoHelpRefactor/iuvohelp/')
 rootProject.name = "IuvoCare"

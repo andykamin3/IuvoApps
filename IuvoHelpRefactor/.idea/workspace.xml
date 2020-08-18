@@ -2,154 +2,110 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb6bf9b9-2274-402a-9040-3ece63a525cd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/IuvoHelpRefactor-iuvohelp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/IuvoShared/IuvoShared.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/iuvohelp/iuvohelp-iuvohelp.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/caches/build_file_checksums.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/google-services.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/proguard-rules.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/andreskaminker/iuvocare/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/androidTest/java/com/andreskaminker/iuvocare/ExampleInstrumentedTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/iuvo_launcher-playstore.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/iuvo_launcher-playstore.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/IuvoCareApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/IuvoCareApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/StartActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/StartActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/entities/Appointment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/entities/Appointment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/entities/Config.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/entities/Config.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/entities/DateResult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/entities/DateResult.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/entities/Helper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/entities/Helper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/entities/MedicationRequest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/entities/MedicationRequest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/entities/Patient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/entities/Patient.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/entities/PatientActions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/entities/PatientActions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/entities/Status.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/entities/Status.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/entities/TimeResult.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/entities/TimeResult.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/helpers/AdapterAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/helpers/AdapterAction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/helpers/AppointmentAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/helpers/AppointmentAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/helpers/CalendarAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/helpers/CalendarAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/helpers/DummyData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/helpers/DummyData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/helpers/MedicationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/helpers/MedicationAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/helpers/UserConfigurationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/helpers/UserConfigurationAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/modules/Extensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/modules/Extensions.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/modules/FragmentInterfaces.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/modules/FragmentInterfaces.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/modules/GlideModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/modules/GlideModule.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/modules/fabButtonHelpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/modules/fabButtonHelpers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/IuvoRoomDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/IuvoRoomDatabase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/converters/KindConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/converters/KindConverter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/converters/StatusConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/converters/StatusConverter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/converters/WeekListConverter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/converters/WeekListConverter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/daos/AppointmentDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/daos/AppointmentDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/daos/MedicationDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/daos/MedicationDao.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/repositories/AppointmentRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/repositories/AppointmentRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/repositories/MedicationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/repositories/MedicationRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/viewmodel/AppointmentViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/viewmodel/AppointmentViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/room/viewmodel/MedicationViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/room/viewmodel/MedicationViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/AddAppointmentFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/AddAppointmentFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/AddMedicationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/AddMedicationFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/AuthFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/AuthFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/CalendarFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/CalendarFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/HomeTabbedScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/HomeTabbedScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/LogInFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/LogInFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/ProfileFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/SeeAppointmentFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/SeeAppointmentFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/SeeMedicationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/SeeMedicationFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/SignUpFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/SignUpFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/UserConfigFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/UserConfigFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/dialogs/ConfirmDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/dialogs/ConfirmDialog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/dialogs/DatePickerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/dialogs/DatePickerFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/andreskaminker/iuvocare/ui/dialogs/TimePickerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvocare/ui/dialogs/TimePickerFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/bg_calendar_white.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/bg_calendar_white.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/example_3_today_bg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/example_3_today_bg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_add_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_add_24.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_add_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_add_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_add_24_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_add_24_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_calendar_today_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_calendar_today_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_check_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_check_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_check_24_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_check_24_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_close_24_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_close_24_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_history_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_history_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_history_24_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_history_24_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_home_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_home_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_home_24_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_home_24_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_menu_24.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_menu_24.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_menu_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_menu_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_menu_24_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_menu_24_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_more_horiz_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_more_horiz_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_more_horiz_24_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_more_horiz_24_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_person_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_person_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_person_24_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_person_24_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_post_add_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_post_add_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_post_add_24_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_post_add_24_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_search_24_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_baseline_search_24_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pill_add_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_pill_add_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pill_add_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_pill_add_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pill_b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_pill_b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_pill_w.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/ic_pill_w.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/iuvo_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/iuvo_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/yellow_dot.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/drawable/yellow_dot.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_start.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/activity_start.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/calendar_event_medicine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/calendar_event_medicine.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/card_action.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/card_action.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/card_appointment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/card_appointment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/card_medication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/card_medication.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/card_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/card_user.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/day_calendar_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/day_calendar_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_appointment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_add_appointment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_medication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_add_medication.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_auth.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_auth.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_calendar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_calendar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home_tabbed_screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_home_tabbed_screen.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_log_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_log_in.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_see_appointment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_see_appointment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_see_medication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_see_medication.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_sign_up.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_user_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/fragment_user_config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/month_calendar_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/month_calendar_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/month_legend_calendar_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/month_legend_calendar_layout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/layout/recycler_view_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/top_app_bar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/menu/top_app_bar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/iuvo_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-anydpi-v26/iuvo_launcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/iuvo_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-anydpi-v26/iuvo_launcher_round.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/iuvo_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-hdpi/iuvo_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/iuvo_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-hdpi/iuvo_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/iuvo_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-hdpi/iuvo_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/iuvo_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-mdpi/iuvo_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/iuvo_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-mdpi/iuvo_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/iuvo_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-mdpi/iuvo_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/iuvo_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xhdpi/iuvo_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/iuvo_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xhdpi/iuvo_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/iuvo_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xhdpi/iuvo_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/iuvo_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxhdpi/iuvo_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/iuvo_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxhdpi/iuvo_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/iuvo_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxhdpi/iuvo_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/iuvo_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxxhdpi/iuvo_launcher.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/iuvo_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxxhdpi/iuvo_launcher_foreground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/iuvo_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/mipmap-xxxhdpi/iuvo_launcher_round.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/auth_directions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/navigation/auth_directions.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_directions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/navigation/nav_directions.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/iuvologo.png" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/raw/iuvologo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/pill.svg" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/raw/pill.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/pill_add.svg" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/raw/pill_add.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/andreskaminker/iuvocare/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/test/java/com/andreskaminker/iuvocare/ExampleUnitTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/IuvoCare.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/iuvohelp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/buildConfig/debug/com/andreskaminker/iuvohelp/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/buildConfig/debug/com/andreskaminker/iuvohelp/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/modules/GlideApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/modules/GlideApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/modules/GlideOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/modules/GlideOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/modules/GlideRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/modules/GlideRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/modules/GlideRequests.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/modules/GlideRequests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/room/IuvoRoomDatabase_Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/room/IuvoRoomDatabase_Impl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/room/daos/AppointmentDao_Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/room/daos/AppointmentDao_Impl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/room/daos/MedicationDao_Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/kapt/debug/com/andreskaminker/iuvohelp/room/daos/MedicationDao_Impl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/AddAppointmentFragmentDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/AddAppointmentFragmentDirections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/AddMedicationFragmentDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/AddMedicationFragmentDirections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/CalendarFragmentDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/CalendarFragmentDirections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/HomeTabbedScreenDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/HomeTabbedScreenDirections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/ProfileFragmentDirections.java" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/build/generated/source/navigation-args/debug/com/andreskaminker/iuvohelp/ui/ProfileFragmentDirections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/androidTest/java/com/andreskaminker/iuvohelp/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/androidTest/java/com/andreskaminker/iuvohelp/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/IuvoCareApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/IuvoCareApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/StartActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/StartActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/AdapterAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/AdapterAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/AppointmentAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/AppointmentAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/CalendarAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/CalendarAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/DummyData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/DummyData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/MedicationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/MedicationAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/UserConfigurationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/helpers/UserConfigurationAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/modules/FragmentInterfaces.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/modules/FragmentInterfaces.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/modules/GlideModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/modules/GlideModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/modules/fabButtonHelpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/modules/fabButtonHelpers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/IuvoRoomDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/IuvoRoomDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/daos/AppointmentDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/daos/AppointmentDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/daos/MedicationDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/daos/MedicationDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/repositories/AppointmentRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/repositories/AppointmentRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/repositories/MedicationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/repositories/MedicationRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/viewmodel/AppointmentViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/viewmodel/AppointmentViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/viewmodel/MedicationViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/room/viewmodel/MedicationViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/AddAppointmentFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/AddAppointmentFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/AddMedicationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/AddMedicationFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/AuthFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/AuthFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/CalendarFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/CalendarFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/HomeTabbedScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/HomeTabbedScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/LogInFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/LogInFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/ProfileFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/SeeAppointmentFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/SeeAppointmentFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/SeeMedicationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/SeeMedicationFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/SignUpFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/SignUpFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/UserConfigFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/UserConfigFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/dialogs/ConfirmDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/dialogs/ConfirmDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/dialogs/DatePickerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/dialogs/DatePickerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/dialogs/TimePickerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/java/com/andreskaminker/iuvohelp/ui/dialogs/TimePickerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/res/navigation/auth_directions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/navigation/auth_directions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/main/res/navigation/nav_directions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/main/res/navigation/nav_directions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/iuvohelp/src/test/java/com/andreskaminker/iuvohelp/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/iuvohelp/src/test/java/com/andreskaminker/iuvohelp/ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/androidTest/java/com/andreskaminker/iuvohelp/ExampleInstrumentedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/androidTest/java/com/andreskaminker/iuvocare/ExampleInstrumentedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/IuvoCareApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/IuvoCareApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/StartActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/StartActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/helpers/AdapterAction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/helpers/AdapterAction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/helpers/AppointmentAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/helpers/AppointmentAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/helpers/CalendarAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/helpers/CalendarAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/helpers/DummyData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/helpers/DummyData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/helpers/MedicationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/helpers/MedicationAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/helpers/UserConfigurationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/helpers/UserConfigurationAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/modules/FragmentInterfaces.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/modules/FragmentInterfaces.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/modules/GlideModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/modules/GlideModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/modules/fabButtonHelpers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/modules/fabButtonHelpers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/room/IuvoRoomDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/room/IuvoRoomDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/room/daos/AppointmentDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/room/daos/AppointmentDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/room/daos/MedicationDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/room/daos/MedicationDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/room/repositories/AppointmentRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/room/repositories/AppointmentRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/room/repositories/MedicationRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/room/repositories/MedicationRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/room/viewmodel/AppointmentViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/room/viewmodel/AppointmentViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/room/viewmodel/MedicationViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/room/viewmodel/MedicationViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/AddAppointmentFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/AddAppointmentFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/AddMedicationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/AddMedicationFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/AuthFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/AuthFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/CalendarFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/CalendarFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/HomeTabbedScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/HomeTabbedScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/LogInFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/LogInFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/ProfileFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/ProfileFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/SeeAppointmentFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/SeeAppointmentFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/SeeMedicationFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/SeeMedicationFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/SignUpFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/SignUpFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/UserConfigFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/UserConfigFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/dialogs/ConfirmDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/dialogs/ConfirmDialog.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/dialogs/DatePickerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/dialogs/DatePickerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvohelp/ui/dialogs/TimePickerFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/andreskaminker/iuvocare/ui/dialogs/TimePickerFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/navigation/auth_directions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/navigation/auth_directions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/navigation/nav_directions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/navigation/nav_directions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/test/java/com/andreskaminker/iuvohelp/ExampleUnitTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/test/java/com/andreskaminker/iuvocare/ExampleUnitTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,9 +126,10 @@
     </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1gBKpqrlwu1yKbVeboVajIb7IUH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -180,10 +137,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Android App.iuvohelp-iuvohelp">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -193,6 +151,57 @@
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="iuvohelp" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="iuvohelp-iuvohelp" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="iuvohelp-iuvohelp" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />

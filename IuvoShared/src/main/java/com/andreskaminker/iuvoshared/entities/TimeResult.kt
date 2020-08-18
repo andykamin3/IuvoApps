@@ -2,6 +2,8 @@ package com.andreskaminker.iuvoshared.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.PrimaryKey
+import org.threeten.bp.LocalTime
+import kotlin.math.min
 
 class TimeResult() {
     @PrimaryKey(autoGenerate = true)
@@ -13,5 +15,9 @@ class TimeResult() {
     constructor(hour: Int, minutes: Int) : this() {
         this.minutes = minutes
         this.hour = hour
+    }
+
+    fun toLocalTime(): LocalTime? {
+        return LocalTime.of(hour, minutes)
     }
 }

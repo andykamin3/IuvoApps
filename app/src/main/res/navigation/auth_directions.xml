@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/authFragment"
-        android:name="com.andreskaminker.iuvohelp.ui.AuthFragment"
+        android:name="com.andreskaminker.iuvocare.ui.AuthFragment"
         android:label="AuthFragment" />
 </navigation>

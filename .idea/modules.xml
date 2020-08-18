@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/IuvoCare.iml" filepath="$PROJECT_DIR$/.idea/modules/IuvoCare.iml" group="IuvoCare" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IuvoHelpRefactor/iuvohelp/IuvoHelp.iml" filepath="$PROJECT_DIR$/.idea/modules/IuvoHelpRefactor/iuvohelp/IuvoHelp.iml" group="IuvoCare/IuvoHelp" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/IuvoShared/IuvoShared.iml" filepath="$PROJECT_DIR$/.idea/modules/IuvoShared/IuvoShared.iml" group="IuvoCare/IuvoShared" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="IuvoCare/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IuvoHelpRefactor/iuvohelp/iuvohelp.iml" filepath="$PROJECT_DIR$/.idea/modules/IuvoHelpRefactor/iuvohelp/iuvohelp.iml" group="IuvoCare/iuvohelp" />
     </modules>
   </component>
 </project>

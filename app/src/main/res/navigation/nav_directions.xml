@@ -6,7 +6,7 @@
     app:startDestination="@id/homeTabbedScreen">
     <fragment
         android:id="@+id/addAppointmentFragment"
-        android:name="com.andreskaminker.iuvohelp.ui.AddAppointmentFragment"
+        android:name="com.andreskaminker.iuvocare.ui.AddAppointmentFragment"
         android:label="Agregar Cita Médica"
         tools:layout="@layout/fragment_add_appointment">
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/addMedicationFragment"
-        android:name="com.andreskaminker.iuvohelp.ui.AddMedicationFragment"
+        android:name="com.andreskaminker.iuvocare.ui.AddMedicationFragment"
         android:label="Agregar Medicación"
         tools:layout="@layout/fragment_add_medication">
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/calendarFragment"
-        android:name="com.andreskaminker.iuvohelp.ui.CalendarFragment"
+        android:name="com.andreskaminker.iuvocare.ui.CalendarFragment"
         android:label="Calendario"
         tools:layout="@layout/fragment_calendar">
         <action
@@ -42,12 +42,12 @@
     </fragment>
     <fragment
         android:id="@+id/userConfigFragment"
-        android:name="com.andreskaminker.iuvohelp.ui.UserConfigFragment"
+        android:name="com.andreskaminker.iuvocare.ui.UserConfigFragment"
         android:label="fragment_user_config"
         tools:layout="@layout/fragment_user_config" />
     <fragment
         android:id="@+id/homeTabbedScreen"
-        android:name="com.andreskaminker.iuvohelp.ui.HomeTabbedScreen"
+        android:name="com.andreskaminker.iuvocare.ui.HomeTabbedScreen"
         android:label="Inicio">
         <action
             android:id="@+id/action_homeTabbedScreen_to_userConfigFragment"
@@ -64,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.andreskaminker.iuvohelp.ui.ProfileFragment"
+        android:name="com.andreskaminker.iuvocare.ui.ProfileFragment"
         android:label="Perfil"
         tools:layout="@layout/fragment_profile">
         <action

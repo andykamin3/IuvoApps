@@ -43,8 +43,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_imagr">Agregar Imagen</string>
-    <string name="datePlaceHolder">21 de agosto de 2020</string>
-    <string name="timePlaceholder">16:00</string>
+    <string name="date_placeholder">Fecha: %s</string>
+    <string name="time_placeholder"><em>Horario: </em> %s</string>
     <string name="med_image_placeholder">This is the medication image</string>
     <string name="imagen_de_la_medicaci_n">Imagen de la Medicación</string>
     <string name="placeholder">TextView</string>
@@ -57,4 +57,5 @@
     <string name="no">CANCELAR</string>
     <string name="action_canceled">Acción cancelada</string>
     <string name="delete_button">Borrar</string>
+    <string name="weekday_placeholder">Días de la semana: %s</string>
 </resources>
