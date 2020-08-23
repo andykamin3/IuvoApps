@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope
 
 @Database(
     entities = arrayOf(Appointment::class, MedicationRequest::class),
-    version = 5,
+    version = 10,
     exportSchema = false
 )
 abstract class IuvoRoomDatabase : RoomDatabase() {

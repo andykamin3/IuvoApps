@@ -24,15 +24,15 @@ class CalendarAdapter(var calendarEvents: MutableList<PatientActions>, val fragm
         fun renderAppointment(position: Int) {
             val element = calendarEvents[position] as Appointment
             Log.d(TAG, element.toString())
+            binding.textViewHourScheduled.text = fragment.getString(R.string.time_placeholder,element.scheduledFor.toLocalTime())
             binding.textViewTitleEvent.text = element.title
-            binding.textViewHourScheduled.text = fragment.getString(R.string.time_placeholder, FormatUtils.timeFormatter.format(element.scheduledFor.retrieveLocalDate()))
-        }
+            }
 
         fun renderMedication(position: Int) {
             val element = calendarEvents[position] as MedicationRequest
             binding.calendarDotView.setBackgroundResource(R.drawable.yellow_dot)
             binding.textViewTitleEvent.text = element.medication
-            binding.textViewHourScheduled.text = fragment.getString(R.string.time_placeholder, FormatUtils.timeFormatter.format(element.takeTime.toLocalTime()))
+            binding.textViewHourScheduled.text = fragment.getString(R.string.time_placeholder,element.takeTime.toLocalTime())
         }
     }
 

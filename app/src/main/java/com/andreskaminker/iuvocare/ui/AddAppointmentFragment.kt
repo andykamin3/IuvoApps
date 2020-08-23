@@ -14,6 +14,7 @@ import android.widget.EditText
 import android.widget.TimePicker
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.andreskaminker.iuvocare.MainActivity
 import com.andreskaminker.iuvocare.R
@@ -21,7 +22,9 @@ import com.andreskaminker.iuvoshared.entities.Appointment
 import com.andreskaminker.iuvoshared.entities.DateResult
 import com.andreskaminker.iuvoshared.entities.Patient
 import com.andreskaminker.iuvocare.helpers.DummyData
+import com.andreskaminker.iuvocare.modules.fabButtonHelpers
 import com.andreskaminker.iuvocare.room.viewmodel.AppointmentViewModel
+import com.andreskaminker.iuvocare.room.viewmodel.PatientViewModel
 import com.andreskaminker.iuvocare.ui.dialogs.DatePickerFragment
 import com.andreskaminker.iuvocare.ui.dialogs.TimePickerFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -48,6 +51,7 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
     private var dateSetted = false
     private lateinit var fabAppointment : FloatingActionButton
     private val appointmentViewModel: AppointmentViewModel by activityViewModels()
+    private val patientViewModel: PatientViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,14 +62,13 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
         nameEditText = v.findViewById(R.id.editTextMedicationName)
         descriptionEditText = v.findViewById(R.id.editTextMedicationDescription)
         fabAppointment = v.findViewById(R.id.fabAddAppointment)
+        fabAppointment.isEnabled = false
         return v
     }
 
     private fun updateUI() {
         val mActivity = requireActivity() as MainActivity
-        fabAppointment.setOnClickListener() {
-            addAppointment(DummyData.currentPatient)
-        }
+
     }
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
@@ -76,6 +79,7 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
         }
         timeSetted = true
     }
+
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         Log.d(TAG, "Year is $year, month: $month, $dayOfMonth")
@@ -88,6 +92,17 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
     }
 
     override fun onStart() {
+        patientViewModel.patient.observe(viewLifecycleOwner, Observer {patient->
+            if(patient != null){
+                Log.d(TAG, patient.toString())
+                fabAppointment.isEnabled = true
+                fabAppointment.setOnClickListener() {
+                    addAppointment(patient)
+                }
+
+
+            }
+        })
         dateButton.setOnClickListener {
             DatePickerFragment()
                 .show(childFragmentManager, "timePicker")
@@ -98,6 +113,7 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
                 .show(childFragmentManager, "timePicker")
         }
         updateUI()
+
         super.onStart()
     }
 
@@ -113,7 +129,7 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
         if (appointmentName != "" && timeSetted && dateSetted) {
             val mAppointment =
                 Appointment(
-                    "generated",
+                    "",
                     appointmentDescription,
                     appointmentName,
                     patient,

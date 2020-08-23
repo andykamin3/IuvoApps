@@ -93,4 +93,5 @@ object FormatUtils {
     val selectionFormatter: DateTimeFormatter =
         DateTimeFormatter.ofPattern("d MMM yyyy").withLocale(Config.default_locale)
     val timeFormatter = DateTimeFormatter.ofPattern("HH:mm")
+
 }

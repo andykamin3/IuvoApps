@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.andreskaminker.iuvoshared.helpers.*
+import org.threeten.bp.LocalTime
 
 @Entity(tableName = "date_results")
 class DateResult {
@@ -34,4 +35,6 @@ class DateResult {
             this.mDay!!
         )
     }
+
+    fun toLocalTime(): LocalTime = LocalTime.of(mHour!!, mMinutes!!)
 }

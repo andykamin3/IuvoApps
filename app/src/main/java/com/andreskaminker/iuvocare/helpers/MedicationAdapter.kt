@@ -56,6 +56,7 @@ class MedicationAdapter(
 
             textViewTime.text = parent.context?.getString(R.string.time_placeholder, medicationList[position].takeTime.toLocalTime())
             textViewMedicationName.text = medicationList[position].medication
+
             var weekString = ""
             medicationList[position].scheduledFor.map {
                 weekString += (mapToWeekday(

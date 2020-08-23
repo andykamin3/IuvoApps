@@ -17,7 +17,7 @@ class TimeResult() {
         this.hour = hour
     }
 
-    fun toLocalTime(): LocalTime? {
+    fun toLocalTime(): LocalTime {
         return LocalTime.of(hour, minutes)
     }
 }
