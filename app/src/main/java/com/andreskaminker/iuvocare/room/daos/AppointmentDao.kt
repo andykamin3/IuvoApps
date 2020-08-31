@@ -14,4 +14,7 @@ interface AppointmentDao {
 
     @Delete
     suspend fun deleteAppointment(vararg: Appointment)
+
+    @Query("DELETE FROM appointments")
+    suspend fun deleteAll()
 }

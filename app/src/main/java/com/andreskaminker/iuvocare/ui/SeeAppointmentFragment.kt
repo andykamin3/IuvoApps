@@ -2,6 +2,7 @@ package com.andreskaminker.iuvocare.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,8 +16,12 @@ import com.andreskaminker.iuvoshared.entities.Appointment
 import com.andreskaminker.iuvocare.helpers.AppointmentAdapter
 import com.andreskaminker.iuvocare.modules.AppointmentFragmentFunctions
 import com.andreskaminker.iuvocare.room.viewmodel.AppointmentViewModel
+import com.andreskaminker.iuvocare.room.viewmodel.PatientViewModel
 import com.andreskaminker.iuvocare.ui.dialogs.ConfirmDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SeeAppointmentFragment : Fragment(), AppointmentFragmentFunctions {
 
@@ -24,6 +29,8 @@ class SeeAppointmentFragment : Fragment(), AppointmentFragmentFunctions {
     val binding get() = _binding!!
     private lateinit var fabButton: FloatingActionButton
     private val appointmentViewModel: AppointmentViewModel by activityViewModels()
+    private val patientViewModel: PatientViewModel by activityViewModels()
+    private val db = Firebase.firestore
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,8 +51,35 @@ class SeeAppointmentFragment : Fragment(), AppointmentFragmentFunctions {
         }
 
         appointmentViewModel.allAppointments.observe(viewLifecycleOwner, Observer { appointments ->
-            appointments?.let { mAdapter.setData(appointments) }
+            //appointments?.let { mAdapter.setData(appointments) }
         })
+
+        appointmentViewModel
+
+
+        db.collection("appointments")
+            .whereEqualTo("patient.patId", patientViewModel.patient.value?.patId)
+            .limit(25)
+            .addSnapshotListener { value, error ->
+                if(error != null){
+                    Log.w(TAG, error)
+                    //TODO: "NOTIFY USER"
+                    Snackbar.make(binding.root, "Error obteniendo los datos.", Snackbar.LENGTH_SHORT)
+                    return@addSnapshotListener
+                }
+                if(value?.documents.isNullOrEmpty()){
+                    Log.w(TAG, "Firebase is null")
+                    //TODO: "NOTIFY USER"
+                    Snackbar.make(binding.root, "No hay datos disponibles. Agregalos usando el botón", Snackbar.LENGTH_SHORT)
+                }
+                else{
+                    value?.toObjects(Appointment::class.java)?.let {
+                        //appointmentViewModel.refreshAppointments(it)
+                        mAdapter.setData(it)
+                        Log.d(TAG, it.toString())
+                    }
+                }
+            }
         updateUI()
     }
 
@@ -55,7 +89,7 @@ class SeeAppointmentFragment : Fragment(), AppointmentFragmentFunctions {
     }
 
     companion object {
-
+        private const val TAG = "SeeAppointmentFragment"
         @JvmStatic
         fun newInstance() =
             SeeAppointmentFragment().apply {

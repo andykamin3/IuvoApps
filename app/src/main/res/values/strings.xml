@@ -58,4 +58,7 @@
     <string name="action_canceled">Acción cancelada</string>
     <string name="delete_button">Borrar</string>
     <string name="weekday_placeholder">Días de la semana: %s</string>
+    <string name="buscar">Buscar</string>
+    <string name="asociar_un_paciente">Asociar un Paciente</string>
+    <string name="paciente_actual">Paciente Actual</string>
 </resources>

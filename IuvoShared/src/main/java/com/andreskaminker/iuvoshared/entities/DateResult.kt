@@ -37,4 +37,5 @@ class DateResult {
     }
 
     fun toLocalTime(): LocalTime = LocalTime.of(mHour!!, mMinutes!!)
+
 }

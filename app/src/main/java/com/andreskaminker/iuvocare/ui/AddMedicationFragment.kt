@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TimePicker
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import ca.antonious.materialdaypicker.MaterialDayPicker
 import com.andreskaminker.iuvocare.MainActivity
@@ -19,6 +20,7 @@ import com.andreskaminker.iuvoshared.entities.MedicationRequest
 import com.andreskaminker.iuvoshared.entities.Patient
 import com.andreskaminker.iuvoshared.entities.TimeResult
 import com.andreskaminker.iuvocare.room.viewmodel.MedicationViewModel
+import com.andreskaminker.iuvocare.room.viewmodel.PatientViewModel
 import com.andreskaminker.iuvocare.ui.dialogs.TimePickerFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -37,12 +39,7 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
     private lateinit var imageButton: Button
     private lateinit var fabMedication : FloatingActionButton
     private val medicationViewModel: MedicationViewModel by activityViewModels()
-    private val currentPatient = Patient(
-        "123",
-        "Andy",
-        "andykamin3@gmail.com",
-        ""
-    )
+    private val patientViewModel: PatientViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -60,9 +57,12 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
 
     private fun updateUI() {
         val mActivity = requireActivity() as MainActivity
-       fabMedication.setOnClickListener{
-            addMedication()
-        }
+        patientViewModel.patient.observe(viewLifecycleOwner, Observer {patient->
+            fabMedication.setOnClickListener{
+                addMedication(patient)
+            }
+        })
+
     }
 
     override fun onStart() {
@@ -82,7 +82,7 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
 
     }
 
-    private fun addMedication() {
+    private fun addMedication(patient: Patient) {
         super.onStart()
         val medicationName = nameEditText.text.toString()
         val medicationDescription = descriptionEditText.text.toString()
@@ -95,7 +95,7 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
             val medicationRequest =
                 MedicationRequest(
                     id = "generated",
-                    patient = currentPatient,
+                    patient = patient,
                     medicationName = medicationName,
                     scheduledFor = weekDays,
                     imageUrl = "images.jpg", //TODO: Change image when uploaded
