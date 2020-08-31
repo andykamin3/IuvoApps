@@ -3,15 +3,14 @@ package com.andreskaminker.iuvocare.ui
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.DatePicker
-import android.widget.EditText
-import android.widget.TimePicker
+import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -27,11 +26,16 @@ import com.andreskaminker.iuvocare.room.viewmodel.AppointmentViewModel
 import com.andreskaminker.iuvocare.room.viewmodel.PatientViewModel
 import com.andreskaminker.iuvocare.ui.dialogs.DatePickerFragment
 import com.andreskaminker.iuvocare.ui.dialogs.TimePickerFragment
+import com.andreskaminker.iuvoshared.helpers.FormatUtils
+import com.andreskaminker.iuvoshared.helpers.mapToABPMonth
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_add_appointment.*
+import org.threeten.bp.LocalDate
+import org.threeten.bp.LocalTime
+import kotlin.math.min
 
 
 class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
@@ -50,6 +54,8 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
     private var timeSetted = false
     private var dateSetted = false
     private lateinit var fabAppointment : FloatingActionButton
+    private lateinit var timeSetTextView: TextView
+    private lateinit var dateSetTextView: TextView
     private val appointmentViewModel: AppointmentViewModel by activityViewModels()
     private val patientViewModel: PatientViewModel by activityViewModels()
     override fun onCreateView(
@@ -62,6 +68,8 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
         nameEditText = v.findViewById(R.id.editTextMedicationName)
         descriptionEditText = v.findViewById(R.id.editTextMedicationDescription)
         fabAppointment = v.findViewById(R.id.fabAddAppointment)
+        timeSetTextView = v.findViewById(R.id.textViewTimeSetted)
+        dateSetTextView = v.findViewById(R.id.textViewDateSetted)
         fabAppointment.isEnabled = false
         return v
     }
@@ -71,12 +79,16 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         Log.d(TAG, "Hour is $hourOfDay and minutes are $minute")
         dateResult.apply {
             mHour = hourOfDay
             mMinutes = minute
         }
+        val toShow = LocalTime.of(hourOfDay, minute)
+        timeSetTextView.text = toShow.format(FormatUtils.timeFormatter)
+
         timeSetted = true
     }
 
@@ -88,6 +100,8 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
             mYear = year
             mMonth = month
         }
+        val toShow = LocalDate.of(year, mapToABPMonth(month), dayOfMonth)
+        dateSetTextView.text = toShow.format(FormatUtils.selectionFormatter)
         dateSetted = true
     }
 
