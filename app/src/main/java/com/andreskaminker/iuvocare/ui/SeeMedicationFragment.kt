@@ -1,6 +1,7 @@
 package com.andreskaminker.iuvocare.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,8 +16,11 @@ import com.andreskaminker.iuvoshared.entities.MedicationRequest
 import com.andreskaminker.iuvocare.helpers.MedicationAdapter
 import com.andreskaminker.iuvocare.modules.MedicationFragmentFunctions
 import com.andreskaminker.iuvocare.room.viewmodel.MedicationViewModel
+import com.andreskaminker.iuvocare.room.viewmodel.PatientViewModel
 import com.andreskaminker.iuvocare.ui.dialogs.ConfirmDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
     private lateinit var v: View
@@ -24,8 +28,9 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
     private lateinit var medicationList: MutableList<MedicationRequest>
     private lateinit var recyclerView: RecyclerView
     private lateinit var fabButton: FloatingActionButton
-
+    private val medicationReference = Firebase.firestore.collection("medications")
     private val medicationViewModel: MedicationViewModel by activityViewModels()
+    private val patientViewModel: PatientViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +49,7 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
             SeeMedicationFragment().apply {
                 arguments = Bundle().apply {}
             }
+        private val TAG = "SeeMedicationFragment"
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -60,9 +66,25 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
             viewLifecycleOwner,
             Observer { medicationsList ->
                 medicationsList?.let {
-                    medicationAdapter.setData(it)
+                    //medicationAdapter.setData(it)
                 }
             })
+        medicationReference.whereEqualTo("patient.patId", patientViewModel.patient.value?.patId)
+            .addSnapshotListener{value, error ->
+                if(error == null){
+                    Log.w(TAG, "Error: ", error)
+                    //TODO:Alert user
+                    return@addSnapshotListener;
+                }
+                if(value?.documents.isNullOrEmpty()){
+                    //TODO: Alert user
+                    Log.w(TAG, "Firestore collection has no match")
+                } else{
+                    value?.toObjects(MedicationRequest::class.java)?.let {
+                       medicationAdapter.setData(it)
+                    }
+                }
+            }
     }
 
 
@@ -87,5 +109,7 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
     private fun onDeleteConfirmed(medicationRequest: MedicationRequest) {
         medicationViewModel.deleteMedication(medicationRequest)
     }
+
+
 
 }

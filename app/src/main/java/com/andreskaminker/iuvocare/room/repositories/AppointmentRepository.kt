@@ -24,7 +24,15 @@ class AppointmentRepository(private val appointmentDao: AppointmentDao) {
 
     suspend fun addAppointment(appointment: Appointment) {
         appointmentDao.addAppointment(appointment)
-        appointmentReference.add(appointment)
+        appointmentReference.add(appointment).addOnSuccessListener {
+            it.set(
+                mapOf(
+                    "aptId" to it.id
+                )
+            )
+        }.addOnFailureListener{
+            Log.w(TAG, "Failed to update doc")
+        }
     }
 
     suspend fun deleteAll(){
@@ -36,6 +44,6 @@ class AppointmentRepository(private val appointmentDao: AppointmentDao) {
         appointmentDao.deleteAppointment(appointment)
     }
     companion object{
-        const val TAG = "AppointmentRepository"
+        private const val TAG = "AppointmentRepository"
     }
 }
