@@ -1,5 +1,6 @@
 package com.andreskaminker.iuvocare.helpers
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -71,13 +72,18 @@ class MedicationAdapter(
             val imgRef =
                 FirebaseStorage.getInstance().reference.child(medicationList[position].imageURL)
             //TODO: add image view support with Glide
+            Log.d(TAG, medicationList[position].imageURL)
             Glide.with(parent.requireActivity())
-                .load(imgRef)
+                .load(medicationList[position].imageURL)
                 .centerCrop()
                 .into(holder.imageView)
 
         }
     }
 
+
+    companion object{
+        val TAG = "MedicationAdapter"
+    }
 
 }

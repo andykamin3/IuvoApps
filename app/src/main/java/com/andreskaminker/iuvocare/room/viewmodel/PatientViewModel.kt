@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.andreskaminker.iuvocare.room.repositories.PatientRepository
 import com.andreskaminker.iuvoshared.entities.Patient
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.EventListener
 import com.google.firebase.firestore.QuerySnapshot
@@ -28,8 +29,12 @@ class PatientViewModel(application: Application) : AndroidViewModel(application)
                 patient.value = null
                 return@EventListener
             }
-            patient.value = value?.documents?.get(0)?.toObject(Patient::class.java)
-
+            if(!value!!.isEmpty){
+                patient.value = value.documents.get(0).toObject(Patient::class.java)
+                Log.d(TAG, patient.value.toString())
+            } else{
+                patient.value = null
+            }
         })
         return patient
     }

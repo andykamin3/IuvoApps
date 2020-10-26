@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.andreskaminker.iuvocare.R
 import com.andreskaminker.iuvocare.databinding.FragmentSeeAppointmentBinding
 import com.andreskaminker.iuvoshared.entities.Appointment
 import com.andreskaminker.iuvocare.helpers.AppointmentAdapter
@@ -50,11 +51,8 @@ class SeeAppointmentFragment : Fragment(), AppointmentFragmentFunctions {
             setHasFixedSize(true)
         }
 
-        appointmentViewModel.allAppointments.observe(viewLifecycleOwner, Observer { appointments ->
-            //appointments?.let { mAdapter.setData(appointments) }
-        })
+  
 
-        appointmentViewModel
 
 
         db.collection("appointments")
@@ -64,13 +62,13 @@ class SeeAppointmentFragment : Fragment(), AppointmentFragmentFunctions {
                 if(error != null){
                     Log.w(TAG, error)
                     //TODO: "NOTIFY USER"
-                    Snackbar.make(binding.root, "Error obteniendo los datos.", Snackbar.LENGTH_SHORT)
+                    Snackbar.make(binding.root, "Error obteniendo los datos.", Snackbar.LENGTH_SHORT).show()
                     return@addSnapshotListener
                 }
                 if(value?.documents.isNullOrEmpty()){
                     Log.w(TAG, "Firebase is null")
-                    //TODO: "NOTIFY USER"
-                    Snackbar.make(binding.root, "No hay datos disponibles. Agregalos usando el botón", Snackbar.LENGTH_SHORT)
+                    //binding.root.background = context?.resources?.getDrawable(com.andreskaminker.iuvoshared.R.drawable.ic_medicamente_01,context?.theme)
+                    Snackbar.make(binding.root, "No hay datos disponibles. Agregalos usando el botón", Snackbar.LENGTH_SHORT).show()
                 }
                 else{
                     value?.toObjects(Appointment::class.java)?.let {

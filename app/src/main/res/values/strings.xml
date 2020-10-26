@@ -61,4 +61,7 @@
     <string name="buscar">Buscar</string>
     <string name="asociar_un_paciente">Asociar un Paciente</string>
     <string name="paciente_actual">Paciente Actual</string>
+    <string name="no_ten_s_ning_n_usuario_vinculado_quer_s_agregar_alguno">No tenés ningún usuario vinculado. ¿Querés agregar alguno?</string>
+    <string name="cuidado">¡Cuidado!</string>
+    <string name="yourcoude">Tú código es</string>
 </resources>

@@ -25,7 +25,7 @@ class AppointmentRepository(private val appointmentDao: AppointmentDao) {
     suspend fun addAppointment(appointment: Appointment) {
         appointmentDao.addAppointment(appointment)
         appointmentReference.add(appointment).addOnSuccessListener {
-            it.set(
+            it.update(
                 mapOf(
                     "aptId" to it.id
                 )
@@ -42,6 +42,11 @@ class AppointmentRepository(private val appointmentDao: AppointmentDao) {
 
     suspend fun deleteAppointment(appointment: Appointment) {
         appointmentDao.deleteAppointment(appointment)
+        appointmentReference.document(appointment.aptId).update(
+            mapOf(
+                "visible" to false
+            )
+        )
     }
     companion object{
         private const val TAG = "AppointmentRepository"

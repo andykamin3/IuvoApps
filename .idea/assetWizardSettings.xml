@@ -28,7 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_access_time_24" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_medicamente_01" />
+                            <entry key="sourceFile" value="$PROJECT_DIR$/IuvoShared/src/main/res/drawable/medicamente-01.svg" />
                           </map>
                         </option>
                       </PersistentState>

@@ -12,7 +12,7 @@ class MedicationRepository(val medicationDao: MedicationDao) {
     suspend fun addMedication(medication: MedicationRequest) {
         medicationDao.addMedication(medication)
         medicationReference.add(medication).addOnSuccessListener {
-            it.set(
+            it.update(
                 mapOf(
                     "medId" to it.id
                 )

@@ -40,68 +40,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/card_profile"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewPatientActual" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        app:helperText="@string/email_des"
-        app:layout_constraintEnd_toStartOf="@+id/searchButtonProfile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailSearchProfileEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/email_des" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/searchButtonProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/buscar"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
-
-    <TextView
-        android:id="@+id/textViewPatientActual"
-        style="@style/TextAppearance.MaterialComponents.Headline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/paciente_actual"
-        app:layout_constraintStart_toStartOf="@+id/include"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
-
-    <TextView
-        android:id="@+id/textView12"
-        style="@style/TextAppearance.MaterialComponents.Headline5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/asociar_un_paciente"
-        app:layout_constraintStart_toStartOf="@+id/include"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerPatientViewer"
         android:layout_width="0dp"
@@ -113,7 +51,17 @@
         app:layout_constraintBottom_toTopOf="@+id/logOutButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonGenerateCode" />
+
+    <Button
+        android:id="@+id/buttonGenerateCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Generar Código de Enlace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

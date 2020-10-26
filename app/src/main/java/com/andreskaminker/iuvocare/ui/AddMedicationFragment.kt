@@ -1,8 +1,15 @@
 package com.andreskaminker.iuvocare.ui
 
+import android.Manifest
+import android.app.Activity
 import android.app.TimePickerDialog
 import android.content.Context
+import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,14 +23,23 @@ import androidx.navigation.findNavController
 import ca.antonious.materialdaypicker.MaterialDayPicker
 import com.andreskaminker.iuvocare.MainActivity
 import com.andreskaminker.iuvocare.R
-import com.andreskaminker.iuvoshared.entities.MedicationRequest
-import com.andreskaminker.iuvoshared.entities.Patient
-import com.andreskaminker.iuvoshared.entities.TimeResult
 import com.andreskaminker.iuvocare.room.viewmodel.MedicationViewModel
 import com.andreskaminker.iuvocare.room.viewmodel.PatientViewModel
 import com.andreskaminker.iuvocare.ui.dialogs.TimePickerFragment
+import com.andreskaminker.iuvoshared.entities.MedicationRequest
+import com.andreskaminker.iuvoshared.entities.Patient
+import com.andreskaminker.iuvoshared.entities.TimeResult
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.Timestamp
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.ktx.storage
+import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.TedPermission
+import gun0912.tedbottompicker.TedBottomPicker
+import java.io.ByteArrayOutputStream
 
 
 class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
@@ -40,6 +56,10 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
     private lateinit var fabMedication : FloatingActionButton
     private val medicationViewModel: MedicationViewModel by activityViewModels()
     private val patientViewModel: PatientViewModel by activityViewModels()
+    private lateinit var storage: FirebaseStorage
+    private lateinit var imgRef: String
+    private var imageLocalUri: Uri? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -55,11 +75,77 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
         return v
     }
 
+    var permissionlistener: PermissionListener = object : PermissionListener {
+        override fun onPermissionGranted() {
+            uploadImage()
+        }
+        override fun onPermissionDenied(deniedPermissions: List<String>) {
+            Snackbar.make(v, "Necesitamos que nos des permisos.", Snackbar.LENGTH_SHORT)
+        }
+    }
+
+
+    private fun uploadImage() {
+
+        TedBottomPicker.with(requireActivity()).show {
+            imageLocalUri = it
+        }
+    }
+
     private fun updateUI() {
         val mActivity = requireActivity() as MainActivity
         patientViewModel.patient.observe(viewLifecycleOwner, Observer {patient->
             fabMedication.setOnClickListener{
-                addMedication(patient)
+                val medicationName = nameEditText.text.toString()
+                val medicationDescription = descriptionEditText.text.toString()
+                val weekDays = arrayListOf<Int>()
+                materialPicker.selectedDays.map {
+                    weekDays.add(it.ordinal)
+                }
+                if (timeSet && medicationName != "" && weekDays.isNotEmpty() && imageLocalUri != null) {
+                val fileRef =
+                    Firebase.storage.reference.child(patientViewModel.patient.value?.patId + Timestamp.now().seconds.toString())
+                val uploadTask = fileRef.putFile(
+                    imageLocalUri!!
+                )
+                uploadTask.continueWithTask { task ->
+                    if (!task.isSuccessful) {
+                        task.exception?.let {
+                            throw it
+                        }
+                    }
+                    fileRef.downloadUrl
+                }.addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val downloadUri = task.result
+                        imgRef = downloadUri.toString()
+                        Log.d(TAG, downloadUri.toString())
+                        val medicationRequest =
+                            MedicationRequest(
+                                id = "1233",
+                                patient = patient,
+                                medicationName = medicationName,
+                                scheduledFor = weekDays,
+                                imageUrl = imgRef, //TODO: Change image when uploaded
+                                takeTime = timeResult
+                            )
+                        medicationViewModel.addMedication(medicationRequest)
+
+                        val directions =
+                            AddMedicationFragmentDirections.actionAddMedicationFragmentToHomeTabbedScreen()
+                        v.findNavController().navigate(directions)
+                        //imageReference = currentUser.uid+Timestamp.now().seconds.toString()
+                    } else {
+                        Snackbar.make(
+                            v,
+                            "Volvé a intentarlo.",
+                            Snackbar.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+
+            }
             }
         })
 
@@ -67,12 +153,17 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
 
     override fun onStart() {
         super.onStart()
+        storage = Firebase.storage
         timeButton.setOnClickListener {
             TimePickerFragment()
                 .show(childFragmentManager, "timePicker")
         }
         imageButton.setOnClickListener {
-            imageSet = true
+            TedPermission.with(requireContext())
+                .setPermissionListener(permissionlistener)
+                .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
+                .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .check();
         }
         updateUI()
     }
@@ -82,36 +173,14 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
 
     }
 
+
     private fun addMedication(patient: Patient) {
         super.onStart()
-        val medicationName = nameEditText.text.toString()
-        val medicationDescription = descriptionEditText.text.toString()
-        val weekDays = arrayListOf<Int>()
-        materialPicker.selectedDays.map {
-            weekDays.add(it.ordinal)
-        }
 
-        if (timeSet && medicationName != "" && weekDays.isNotEmpty() && imageSet) {
-            val medicationRequest =
-                MedicationRequest(
-                    id = "generated",
-                    patient = patient,
-                    medicationName = medicationName,
-                    scheduledFor = weekDays,
-                    imageUrl = "images.jpg", //TODO: Change image when uploaded
-                    takeTime = timeResult
-                )
-            medicationViewModel.addMedication(medicationRequest)
 
-            val directions =
-                AddMedicationFragmentDirections.actionAddMedicationFragmentToHomeTabbedScreen()
-            v.findNavController().navigate(directions)
-        } else {
-            Snackbar
-                .make(v, "Por favor completar los campos obligatorios", Snackbar.LENGTH_SHORT)
-                .setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
-                .show()
-        }
+
+
+
     }
 
 
@@ -121,6 +190,10 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
             minutes = minute
         )
         timeSet = true
+    }
+
+    companion object{
+        const val REQUEST_IMAGE_CAPTURE = 1122
     }
 
 
