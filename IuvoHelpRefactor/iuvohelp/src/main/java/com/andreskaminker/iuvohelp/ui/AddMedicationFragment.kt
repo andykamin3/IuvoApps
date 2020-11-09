@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.TimePicker
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import ca.antonious.materialdaypicker.MaterialDayPicker
 import com.andreskaminker.iuvohelp.MainActivity
@@ -20,6 +21,7 @@ import com.andreskaminker.iuvohelp.ui.dialogs.TimePickerFragment
 import com.andreskaminker.iuvoshared.entities.MedicationRequest
 import com.andreskaminker.iuvoshared.entities.Patient
 import com.andreskaminker.iuvoshared.entities.TimeResult
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -33,9 +35,14 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
     private var imageSet = false
     private lateinit var nameEditText: EditText
     private lateinit var descriptionEditText: EditText
-    private lateinit var imageButton: Button
+    private lateinit var fabMedication : Button
     private val medicationViewModel: MedicationViewModel by activityViewModels()
-    private val currentPatient = Patient("123", "Andy", "andykamin3@gmail.com", "")
+    private val currentPatient = Patient(
+        "123",
+        "Andy",
+        "andykamin3@gmail.com",
+        ""
+    )
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,15 +53,14 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
         timeButton = v.findViewById(R.id.timeButton)
         nameEditText = v.findViewById(R.id.editTextMedicationName)
         descriptionEditText = v.findViewById(R.id.editTextMedicationDescription)
-        imageButton = v.findViewById(R.id.imageButton)
+
+        fabMedication = v.findViewById(R.id.fabAddMedication)
         return v
     }
 
     private fun updateUI() {
         val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_check_24_b)
-        mActivity.setFabColor(R.color.colorAccent)
-        mActivity.setFabClickListener {
+        fabMedication.setOnClickListener{
             addMedication()
         }
     }
@@ -65,14 +71,13 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
             TimePickerFragment()
                 .show(childFragmentManager, "timePicker")
         }
-        imageButton.setOnClickListener {
-            imageSet = true
-        }
+
+        updateUI()
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        updateUI()
+
     }
 
     private fun addMedication() {
@@ -84,20 +89,21 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
             weekDays.add(it.ordinal)
         }
 
-        if (timeSet && medicationName != "" && weekDays.isNotEmpty() && imageSet) {
-            val medicationRequest = MedicationRequest(
-                id = "generated",
-                patient = currentPatient,
-                medicationName = medicationName,
-                scheduledFor = weekDays,
-                imageUrl = "images.jpg", //TODO: Change image when uploaded
-                takeTime = timeResult
-            )
+        if (timeSet && medicationName != "" && weekDays.isNotEmpty()) {
+            val medicationRequest =
+                MedicationRequest(
+                    id = "generated",
+                    patient = currentPatient,
+                    medicationName = medicationName,
+                    scheduledFor = weekDays,
+                    imageUrl = "images.jpg", //TODO: Change image when uploaded
+                    takeTime = timeResult
+                )
             medicationViewModel.addMedication(medicationRequest)
-            (requireActivity() as MainActivity).setFabColor(R.color.colorAccent)
-            val directions =
-                AddMedicationFragmentDirections.actionAddMedicationFragmentToHomeTabbedScreen()
-            v.findNavController().navigate(directions)
+
+
+            Navigation.findNavController(v).navigate(R.id.action_addMedicationFragment_to_homefrag)
+
         } else {
             Snackbar
                 .make(v, "Por favor completar los campos obligatorios", Snackbar.LENGTH_SHORT)
@@ -108,7 +114,10 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
 
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-        timeResult = TimeResult(hour = hourOfDay, minutes = minute)
+        timeResult = TimeResult(
+            hour = hourOfDay,
+            minutes = minute
+        )
         timeSet = true
     }
 

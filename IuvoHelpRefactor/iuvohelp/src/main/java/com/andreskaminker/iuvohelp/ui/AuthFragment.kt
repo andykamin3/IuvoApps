@@ -33,7 +33,6 @@ class AuthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewPager = v.findViewById(R.id.pager)
-        tabLayout = v.findViewById(R.id.tab_layout)
         authScreenAdapter = ScreenPageAdapter(childFragmentManager)
         viewPager.adapter = authScreenAdapter
     }

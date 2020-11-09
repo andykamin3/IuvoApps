@@ -3,12 +3,16 @@
 
     <string name="home_title">Inicio</string>
     <string name="log_in">Iniciar Sesión</string>
+    <string name="log_in2">¿Ya tenes una cuenta? Inicia sesión</string>
     <string name="log_out">Cerrar Sesión</string>
     <string name="change_pwd">Cambiar Contraseña</string>
     <string name="sign_up">Registrate</string>
     <string name="name_des">Nombre y Apellido</string>
     <string name="email_des">Dirección de Correo Electrónico</string>
     <string name="password_des">Contraseña</string>
+    <string name="name_des2"> Ingrese su nombre y apellido</string>
+    <string name="email_des2">Ingrese su dirección de correo electrónico</string>
+    <string name="password_des2">Ingrese su contraseña</string>
     <string name="google_register">Registro con Google</string>
     <string name="forgot_password">Me olvidé mi contraseña</string>
     <string name="privacy_policy">Política de Privacidad</string>
@@ -21,7 +25,7 @@
     <string name="message_name">Ibuprofeno 200mg</string>
     <string name="time_of_message_placeholder">18:07</string>}
     <string name="kind_placeholder">Medicación</string>
-    <string name="status_placeholder">Completado</string>
+    <string name="status_placeholder">Hace 20 minutos</string>
     <string name="add_appointment">Agregar una Cita Médica</string>
     <string name="add_doctor_name">Nombre del Médico</string>
     <string name="add_date">Agregar Fecha </string>
@@ -59,4 +63,5 @@
     <string name="no">CANCELAR</string>
     <string name="action_canceled">Acción cancelada</string>
     <string name="delete_button">Borrar</string>
+    <string name="HintClock">Reloj</string>
 </resources>
