@@ -115,6 +115,9 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
                 }
 
 
+
+            }else{
+                Log.d(TAG, "Patient is null")
             }
         })
         dateButton.setOnClickListener {

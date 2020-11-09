@@ -10,5 +10,5 @@ import com.google.firebase.ktx.Firebase
 class PatientRepository() {
     val user: FirebaseUser? = FirebaseAuth.getInstance()?.currentUser
 
-    val patientReference = Firebase.firestore.collection("patients").whereEqualTo("helper", user?.uid)
+    val patientReference = Firebase.firestore.collection("patients").whereEqualTo("helper", user!!.uid)
 }

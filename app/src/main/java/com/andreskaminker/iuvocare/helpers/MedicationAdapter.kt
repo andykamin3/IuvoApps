@@ -32,7 +32,6 @@ class MedicationAdapter(
         val imageView: ImageView = cv.findViewById(R.id.imageViewMedication)
         val textViewTime: TextView = cv.findViewById(R.id.textViewMedicationTime)
         val cardView = cv.findViewById<CardView>(R.id.cardViewMedication)
-        val deleteButton: Button = cv.findViewById(R.id.deleteMedicationButton)
         //TAB
 
     }
@@ -65,9 +64,7 @@ class MedicationAdapter(
                 ).mapToABP()
                     .getDisplayName(TextStyle.FULL, Config.default_locale) + " ")
             }
-            deleteButton.setOnClickListener {
-                (parent as SeeMedicationFragment).deleteMedication(medicationList[position])
-            }
+
             textViewWeekdays.text = parent.context?.getString(R.string.weekday_placeholder, weekString)
             val imgRef =
                 FirebaseStorage.getInstance().reference.child(medicationList[position].imageURL)

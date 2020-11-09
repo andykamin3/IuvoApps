@@ -40,6 +40,7 @@ import com.gun0912.tedpermission.PermissionListener
 import com.gun0912.tedpermission.TedPermission
 import gun0912.tedbottompicker.TedBottomPicker
 import java.io.ByteArrayOutputStream
+import java.lang.IllegalStateException
 
 
 class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
@@ -80,7 +81,7 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
             uploadImage()
         }
         override fun onPermissionDenied(deniedPermissions: List<String>) {
-            Snackbar.make(v, "Necesitamos que nos des permisos.", Snackbar.LENGTH_SHORT)
+            Snackbar.make(v, "Necesitamos que nos des permisos.", Snackbar.LENGTH_SHORT).show()
         }
     }
 
@@ -162,8 +163,8 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
             TedPermission.with(requireContext())
                 .setPermissionListener(permissionlistener)
                 .setDeniedMessage("If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
-                .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .check();
+                .setPermissions(Manifest.permission_group.STORAGE)
+                .check()
         }
         updateUI()
     }
@@ -175,8 +176,6 @@ class AddMedicationFragment : Fragment(), TimePickerDialog.OnTimeSetListener {
 
 
     private fun addMedication(patient: Patient) {
-        super.onStart()
-
 
 
 

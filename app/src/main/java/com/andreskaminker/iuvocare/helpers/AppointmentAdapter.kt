@@ -42,10 +42,7 @@ class AppointmentAdapter(val fragment: Fragment) :
         holder.binding.appointmentTitleCard.text = appointmentList[position].title
         holder.binding.appointmentDateCard.text = fragment.getString(R.string.date_placeholder, formatStringDate(appointmentList[position]))
         holder.binding.appointmentTimeCard.text = fragment.getString(R.string.date_placeholder, formatTime(appointmentList[position]))
-        holder.binding.buttonDelete.setOnClickListener {
-            fragment as SeeAppointmentFragment
-            fragment.deleteAppointment(appointmentList[position])
-        }
+
     }
 
     private fun formatStringDate(element: Appointment): String {

@@ -5,7 +5,7 @@ import androidx.room.Entity
 @Entity(tableName = "patients")
 data class Patient(
     val patId: String,
-    val name_given: String,
+    val nameGiven: String,
     val email: String,
     val helper: String
 ) {
