@@ -59,16 +59,6 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
         return v
     }
 
-    private fun updateUI() {
-        val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_check_24_b)
-        mActivity.setFabColor(R.color.colorGreen)
-        mActivity.setFabClickListener {
-            (requireActivity() as MainActivity).setFabClickListener {
-                addAppointment(DummyData.currentPatient)
-            }
-        }
-    }
 
     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
         Log.d(TAG, "Hour is $hourOfDay and minutes are $minute")
@@ -103,10 +93,7 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
         super.onStart()
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        updateUI()
-    }
+
 
 
     private fun addAppointment(patient: Patient) {
@@ -121,9 +108,9 @@ class AddAppointmentFragment : Fragment(), TimePickerDialog.OnTimeSetListener,
                 dateResult
             )
             appointmentViewModel.addAppointment(mAppointment)
-            (requireActivity() as MainActivity).setFabColor(R.color.colorAccent)
+            (requireActivity() as MainActivity)
             val directions =
-                AddAppointmentFragmentDirections.actionAddAppointmentFragmentToHomeTabbedScreen()
+                AddAppointmentFragmentDirections.actionAddAppointmentFragmentToHomefrag()
             v.findNavController().navigate(directions)
         } else {
             Snackbar.make(v, "Completa todos los campos", Snackbar.LENGTH_SHORT).show()

@@ -190,12 +190,10 @@ class CalendarFragment : Fragment() {
             // we scroll to a new month.
             //selectDate(it.yearMonth.atDay(1))
         }
-        updateUI()
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        updateUI()
     }
 
     fun onDateSelected(newDate: LocalDate) {
@@ -240,15 +238,7 @@ class CalendarFragment : Fragment() {
     }
 
 
-    private fun updateUI() {
-        val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_home_24_b)
-        mActivity.setFabColor(R.color.colorAccent)
-        mActivity.setFabClickListener {
-            val directions = CalendarFragmentDirections.actionCalendarFragmentToHomeTabbedScreen()
-            v.findNavController().navigate(directions)
-        }
-    }
+
 }
 
 

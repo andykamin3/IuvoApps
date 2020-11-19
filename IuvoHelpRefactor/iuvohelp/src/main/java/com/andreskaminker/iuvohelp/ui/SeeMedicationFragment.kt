@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,7 +27,8 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
     private lateinit var medicationAdapter: MedicationAdapter
     private lateinit var medicationList: MutableList<MedicationRequest>
     private lateinit var recyclerView: RecyclerView
-    private lateinit var fabButton: FloatingActionButton
+    private lateinit var btnVerMasMeds: Button
+
 
     private val medicationViewModel: MedicationViewModel by activityViewModels()
     override fun onCreateView(
@@ -35,7 +38,10 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_see_medication, container, false)
         recyclerView = v.findViewById(R.id.recyclerMedications)
-        fabButton = requireActivity().findViewById(R.id.floatingActionButton)
+        btnVerMasMeds = v.findViewById(R.id.btnMedsMas)
+        btnVerMasMeds.setOnClickListener {
+            Navigation.findNavController(v).navigate(R.id.action_seeMedicationFragment_to_addMedicationFragment)
+        }
         return v
     }
 
@@ -69,20 +75,11 @@ class SeeMedicationFragment : Fragment(), MedicationFragmentFunctions {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        updateUI()
     }
 
 
-    private fun updateUI() {
-        val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_add_24_b)
-        //mActivity.setFabColor(R.color.colorAccent)
-        mActivity.setFabClickListener {
-            val directions =
-                HomeTabbedScreenDirections.actionHomeTabbedScreenToAddMedicationFragment()
-            v.findNavController().navigate(directions)
-        }
-    }
+
+
 
     override fun deleteMedication(medicationRequest: MedicationRequest) {
         ConfirmDialog("Confirmar borrado de medicación") { onDeleteConfirmed(medicationRequest) }.show(

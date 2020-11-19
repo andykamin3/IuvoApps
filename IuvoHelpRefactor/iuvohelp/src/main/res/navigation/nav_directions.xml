@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_directions"
-    app:startDestination="@id/homeTabbedScreen">
+    app:startDestination="@id/homefrag">
     <fragment
         android:id="@+id/addAppointmentFragment"
         android:name="com.andreskaminker.iuvohelp.ui.AddAppointmentFragment"
@@ -13,8 +13,8 @@
             android:id="@+id/action_addAppointmentFragment_to_addMedicationFragment"
             app:destination="@id/addMedicationFragment" />
         <action
-            android:id="@+id/action_addAppointmentFragment_to_homeTabbedScreen"
-            app:destination="@id/homeTabbedScreen" />
+            android:id="@+id/action_addAppointmentFragment_to_homefrag"
+            app:destination="@id/homefrag" />
     </fragment>
     <fragment
         android:id="@+id/addMedicationFragment"
@@ -25,8 +25,8 @@
             android:id="@+id/action_addMedicationFragment_to_addAppointmentFragment"
             app:destination="@id/addAppointmentFragment" />
         <action
-            android:id="@+id/action_addMedicationFragment_to_homeTabbedScreen"
-            app:destination="@id/homeTabbedScreen" />
+            android:id="@+id/action_addMedicationFragment_to_homefrag"
+            app:destination="@id/homefrag" />
     </fragment>
     <fragment
         android:id="@+id/calendarFragment"
@@ -37,8 +37,8 @@
             android:id="@+id/action_calendarFragment_to_addAppointmentFragment"
             app:destination="@id/addAppointmentFragment" />
         <action
-            android:id="@+id/action_calendarFragment_to_homeTabbedScreen"
-            app:destination="@id/homeTabbedScreen" />
+            android:id="@+id/action_calendarFragment_to_homefrag"
+            app:destination="@id/homefrag" />
     </fragment>
     <fragment
         android:id="@+id/userConfigFragment"
@@ -46,29 +46,53 @@
         android:label="fragment_user_config"
         tools:layout="@layout/fragment_user_config" />
     <fragment
-        android:id="@+id/homeTabbedScreen"
-        android:name="com.andreskaminker.iuvohelp.ui.HomeTabbedScreen"
-        android:label="Inicio">
-        <action
-            android:id="@+id/action_homeTabbedScreen_to_userConfigFragment"
-            app:destination="@id/userConfigFragment" />
-        <action
-            android:id="@+id/action_homeTabbedScreen_to_addMedicationFragment"
-            app:destination="@id/addMedicationFragment" />
-        <action
-            android:id="@+id/action_homeTabbedScreen_to_calendarFragment"
-            app:destination="@id/calendarFragment" />
-        <action
-            android:id="@+id/action_homeTabbedScreen_to_addAppointmentFragment"
-            app:destination="@id/addAppointmentFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/profileFragment"
         android:name="com.andreskaminker.iuvohelp.ui.ProfileFragment"
         android:label="Perfil"
-        tools:layout="@layout/fragment_profile">
+        tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/homefrag"
+        android:name="com.andreskaminker.iuvohelp.homefrag"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_profileFragment_to_homeTabbedScreen"
-            app:destination="@id/homeTabbedScreen" />
+            android:id="@+id/action_homefrag_to_userConfigFragment"
+            app:destination="@id/userConfigFragment" />
+        <action
+            android:id="@+id/action_homefrag_to_addMedicationFragment"
+            app:destination="@id/addMedicationFragment" />
+        <action
+            android:id="@+id/action_homefrag_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+        <action
+            android:id="@+id/action_homefrag_to_addAppointmentFragment"
+            app:destination="@id/addAppointmentFragment" />
+        <action
+            android:id="@+id/action_homefrag_to_seeMedicationFragment"
+            app:destination="@id/seeMedicationFragment" />
+        <action
+            android:id="@+id/action_homefrag_to_config2"
+            app:destination="@id/config2" />
+    </fragment>
+    <fragment
+        android:id="@+id/seeMedicationFragment"
+        android:name="com.andreskaminker.iuvohelp.ui.SeeMedicationFragment"
+        android:label="fragment_see_medication"
+        tools:layout="@layout/fragment_see_medication" >
+        <action
+            android:id="@+id/action_seeMedicationFragment_to_homefrag"
+            app:destination="@id/homefrag" />
+        <action
+            android:id="@+id/action_seeMedicationFragment_to_addMedicationFragment"
+            app:destination="@id/addMedicationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/config2"
+        android:name="com.andreskaminker.iuvohelp.ui.config"
+        android:label="fragment_config"
+        tools:layout="@layout/fragment_config" >
+        <action
+            android:id="@+id/action_config2_to_homefrag"
+            app:destination="@id/homefrag" />
     </fragment>
 </navigation>

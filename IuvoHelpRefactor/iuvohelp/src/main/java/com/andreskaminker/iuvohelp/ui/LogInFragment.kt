@@ -9,20 +9,29 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.andreskaminker.iuvohelp.MainActivity
 import com.andreskaminker.iuvohelp.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 
 //
-class LogInFragment : Fragment() {
+class LogInFragment : Fragment(){
     //TODO: Add login functionality and ToS, etc.
     private lateinit var v: View
     private lateinit var logInButton: Button
+    private lateinit var SignUpButton: Button
     private lateinit var auth: FirebaseAuth
     private val TAG = "LogInFragment"
     private lateinit var editTextUsername: EditText
     private lateinit var editTextPassword: EditText
+    private  var navController: NavController? = null;
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +42,8 @@ class LogInFragment : Fragment() {
         editTextUsername = v.findViewById(R.id.editTextEmail)
         editTextPassword = v.findViewById(R.id.editTextPassword)
         logInButton = v.findViewById(R.id.logInButton)
+        SignUpButton = v.findViewById(R.id.singinButton)
+
         return v
     }
 
@@ -66,10 +77,15 @@ class LogInFragment : Fragment() {
                     .show()
             }
         }
+        SignUpButton.setOnClickListener {
+            Navigation.findNavController(v).navigate(R.id.action_logInFragment_to_signUpFragment)
+        }
     }
 
     private fun goToHome() {
         val mIntent = Intent(requireActivity(), MainActivity::class.java)
         startActivity(mIntent)
     }
+
+
 }

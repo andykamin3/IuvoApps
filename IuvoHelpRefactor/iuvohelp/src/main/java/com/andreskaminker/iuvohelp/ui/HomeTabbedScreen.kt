@@ -22,7 +22,7 @@ class HomeTabbedScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_home_tabbed_screen, container, false)
+        v = inflater.inflate(R.layout.fragment_home, container, false)
 
         return v
     }

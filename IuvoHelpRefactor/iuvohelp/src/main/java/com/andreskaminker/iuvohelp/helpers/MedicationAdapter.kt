@@ -28,11 +28,8 @@ class MedicationAdapter(
 
     class MedicationHolder(cv: View) : RecyclerView.ViewHolder(cv) {
         val textViewMedicationName: TextView = cv.findViewById(R.id.textViewMedicationName)
-        val textViewWeekdays: TextView = cv.findViewById(R.id.textViewMedicationDate)
-        val imageView: ImageView = cv.findViewById(R.id.imageViewMedication)
         val textViewTime: TextView = cv.findViewById(R.id.textViewMedicationTime)
         val cardView = cv.findViewById<CardView>(R.id.cardViewMedication)
-        val deleteButton: Button = cv.findViewById(R.id.deleteMedicationButton)
         //TAB
 
     }
@@ -44,7 +41,7 @@ class MedicationAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MedicationHolder {
         val cardView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_medication, parent, false)
+            .inflate(R.layout.medication_shortcard, parent, false)
         return MedicationHolder(cardView)
     }
 
@@ -62,17 +59,9 @@ class MedicationAdapter(
                 weekString += (mapToWeekday(it).mapToABP()
                     .getDisplayName(TextStyle.FULL, Config.default_locale) + " ")
             }
-            deleteButton.setOnClickListener {
-                (parent as SeeMedicationFragment).deleteMedication(medicationList[position])
-            }
-            textViewWeekdays.text = weekString
-            val imgRef =
-                FirebaseStorage.getInstance().reference.child(medicationList[position].imageURL)
-            //TODO: add image view support with Glide
-            Glide.with(parent.requireActivity())
-                .load(imgRef)
-                .centerCrop()
-                .into(holder.imageView)
+           // deleteButton.setOnClickListener {
+            //    (parent as SeeMedicationFragment).deleteMedication(medicationList[position])
+            //}
 
         }
     }

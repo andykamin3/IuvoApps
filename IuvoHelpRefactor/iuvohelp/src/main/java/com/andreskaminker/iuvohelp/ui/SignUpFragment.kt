@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.andreskaminker.iuvohelp.R
 import com.andreskaminker.iuvoshared.entities.Helper
 import com.google.android.material.snackbar.Snackbar
@@ -20,6 +21,8 @@ class SignUpFragment : Fragment() {
     private lateinit var v: View
     private val TAG = "SignUpFragment"
     private lateinit var buttonSignUp: Button
+    private lateinit var buttonLogIn: Button
+
     private lateinit var auth: FirebaseAuth
     private lateinit var editTextPassword: EditText
     private lateinit var editTextEmail: EditText
@@ -31,9 +34,10 @@ class SignUpFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_sign_up, container, false)
-        buttonSignUp = v.findViewById(R.id.logInButton)
+        buttonSignUp = v.findViewById(R.id.singinButton)
         editTextEmail = v.findViewById(R.id.editTextEmail)
-        editTextName = v.findViewById(R.id.editTextName)
+        buttonLogIn = v.findViewById(R.id.logInButton)
+        editTextName = v.findViewById(R.id.edNumEmergencia)
         editTextPassword = v.findViewById(R.id.editTextPassword)
         return v
     }
@@ -47,7 +51,7 @@ class SignUpFragment : Fragment() {
             val password = editTextPassword.text.toString().trim()
             val name = editTextName.text.toString().trim()
             if (email.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty()) {
-                if (password.length > 8) {
+                if (password.length >= 8) {
                     createUser(email, password, name)
                 } else {
                     Snackbar.make(
@@ -61,7 +65,11 @@ class SignUpFragment : Fragment() {
                     .show()
             }
         }
-    }
+        buttonLogIn.setOnClickListener {
+            Navigation.findNavController(v).navigate(R.id.action_signUpFragment_to_logInFragment)
+        }
+
+        }
 
     private fun createUser(email: String, password: String, name: String) {
         auth.createUserWithEmailAndPassword(email, password)
@@ -74,12 +82,13 @@ class SignUpFragment : Fragment() {
                         .setDisplayName(name)
                         .build()
                     user!!.updateProfile(profileUpdates)
-                    val helperData = Helper(
-                        id = user.uid,
-                        name_given = name,
-                        email = email,
-                        helped = ""
-                    )
+                    val helperData =
+                        Helper(
+                            id = user.uid,
+                            name_given = name,
+                            email = email,
+                            helped = ""
+                        )
                     db.collection("helpers").document(helperData.id).set(helperData)
                     goToUserPreferences()
                 } else {

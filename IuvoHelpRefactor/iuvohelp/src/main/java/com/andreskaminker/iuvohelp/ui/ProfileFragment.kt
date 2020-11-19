@@ -31,15 +31,7 @@ class ProfileFragment : Fragment() {
         return v
     }
 
-    private fun updateUI() {
-        val mActivity = requireActivity() as MainActivity
-        mActivity.setFabDrawable(R.drawable.ic_baseline_home_24_b)
-        mActivity.setFabColor(R.color.colorAccent)
-        mActivity.setFabClickListener {
-            val directions = ProfileFragmentDirections.actionProfileFragmentToHomeTabbedScreen()
-            v.findNavController().navigate(directions)
-        }
-    }
+
 
     override fun onStart() {
         //updateUI()
@@ -56,6 +48,5 @@ class ProfileFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        updateUI()
     }
 }

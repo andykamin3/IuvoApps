@@ -3,6 +3,7 @@
     package="com.andreskaminker.iuvohelp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/iuvo_launcher"
@@ -11,7 +12,7 @@
         android:supportsRtl="true"
         android:name="com.andreskaminker.iuvohelp.IuvoCareApplication"
         android:theme="@style/AppTheme">
-        <activity android:name="com.andreskaminker.iuvohelp.StartActivity">
+        <activity android:name="com.andreskaminker.iuvohelp.StartActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
